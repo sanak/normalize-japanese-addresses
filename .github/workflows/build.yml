@@ -160,7 +160,7 @@ jobs:
       # prerelease は next dist-tag に公開し、npm install の既定や ^/~ の範囲に入れない
       - name: 公開 (latest)
         if: steps.meta.outputs.prerelease == '0'
-        run: npm publish --access=public --provenance --dry-run
+        run: npm publish --access=public --provenance
       - name: 公開 (next)
         if: steps.meta.outputs.prerelease == '1'
-        run: npm publish --access=public --provenance --tag=next --dry-run
+        run: npm publish --access=public --provenance --tag=next
